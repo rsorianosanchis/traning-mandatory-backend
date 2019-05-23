@@ -8,7 +8,7 @@ h2{
     text-align: center;
     font-family: Tahoma, Geneva, sans-serif;
 }
-#panel-bienvenida{
+#welcome-rutan{
     padding: 20% 20%;
 }
 #usr{
@@ -18,12 +18,12 @@ h2{
     border: 1px solid #ddd;
 }
 
-#persona{
+#person{
     border: 1px solid #ddd;
 }
 
 #app-chat{
-    /*display: none;*/
+    display: none;
     max-width: 600px;
     margin: 30px auto;
     border: 1px solid #ddd;
