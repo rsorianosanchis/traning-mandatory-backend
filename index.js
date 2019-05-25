@@ -23,6 +23,10 @@ io.on('connection',(socket)=>{
   socket.on('chat',function(data){
     console.log(data);
     io.sockets.emit('chat',data);
+  });
+  socket.on('typing',function(data){
+    socket.broadcast.emit('typing',data);
+
   })
 
 });

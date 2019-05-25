@@ -19,10 +19,30 @@ vButtonSend.addEventListener('click', function (e) {
   vMsg.value = '';
 
 });
+
+vMsg.addEventListener('keyup', function(e) {
+  if(vPerson.value){
+    socket.emit('typing', {
+      name: vUser.value,
+      text: vMsg.value
+    })
+  }
+});
+
+
 //msg som kommer från server
+//saknar tid och klockan
 socket.on('chat',function(data){
   vWrittingMsg.innerHTML = '';
-  vOutput.innerHTML += `<p><strong> ${data.user} </strong> ${data.msg} </p>`;
+  vOutput.innerHTML += `<p><strong> ${data.user}: </strong> ${data.msg} </p>`;
+});
+//
+socket.on('typing',function(data){
+  if (data.text) {
+    vWrittingMsg.innerHTML = `<p><em> ${data.name} skriver...`;
+  }else{
+    vWrittingMsg.innerHTML='';
+  }
 })
 
 function goIn(){
