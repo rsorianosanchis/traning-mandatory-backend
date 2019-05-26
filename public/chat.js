@@ -39,7 +39,7 @@ socket.on('chat',function(data){
 //
 socket.on('typing',function(data){
   if (data.text) {
-    vWrittingMsg.innerHTML = `<p><em> ${data.name} skriver...`;
+    vWrittingMsg.innerHTML = `<p><em> ${data.name} skriver ...`;
   }else{
     vWrittingMsg.innerHTML='';
   }
